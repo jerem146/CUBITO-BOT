@@ -1,12 +1,15 @@
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn, args }) => {
-let mentionedJid = await m.mentionedJid
-let userId = mentionedJid && mentionedJid[0] ? mentionedJid[0] : m.sender
-let totalreg = Object.keys(global.db.data.users).length
-let totalCommands = Object.values(global.plugins).filter((v) => v.help && v.tags).length
-    
-let txt = `̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮
+
+  await m.reply('✅ Menú detectado, enviando...')  // 👈 prueba aquí
+
+  let mentionedJid = await m.mentionedJid
+  let userId = mentionedJid && mentionedJid[0] ? mentionedJid[0] : m.sender
+  let totalreg = Object.keys(global.db.data.users).length
+  let totalCommands = Object.values(global.plugins).filter((v) => v.help && v.tags).length
+
+  let txt = `̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮
 ︶•︶°︶•︶°︶•︶°︶•︶°︶•︶°︶
 > ❀ Hola! @${userId.split('@')[0]}, Soy *${botname}*, Aquí tienes la lista de comandos.
 
